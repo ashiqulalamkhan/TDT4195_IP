@@ -78,7 +78,9 @@ n = 1
 for i in indices:
     plt.subplot(2, num_filters, n)
     # Plot weight here
+    plt.imshow(torch_image_to_numpy(weight[i]))
     plt.subplot(2, num_filters, num_filters+n)
     # Plot activation here
+    plt.imshow(torch_image_to_numpy(activation[0][i]))
     n += 1
 ### END YOUR CODE HERE ###
