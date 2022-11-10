@@ -127,7 +127,7 @@ def create_high_pass_frequency_kernel(im: np.array,
     assert len(im.shape) == 2,\
         "Expected a grayscale image. Got image shape: {}".format(im.shape)
     kernel = np.ones_like((im))
-    rr, cc = skimage.draw.circle_perimeter(center_row, center_col, radius)
+    rr, cc = skimage.draw.disk((center_row, center_col), radius)
     kernel[rr, cc] = 0.0
     kernel = np.fft.fftshift(kernel)
     return kernel
